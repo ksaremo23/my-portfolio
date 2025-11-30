@@ -49,7 +49,7 @@ export default function Contact() {
           <h2 className="heading mb-4 text-white">Get In Touch</h2>
           <div className="w-24 h-1 bg-gradient-to-r from-blue-500 to-purple-600 mx-auto mb-8" />
           <p className="text-lg text-foreground/70 max-w-2xl mx-auto">
-            Let's discuss how I can help grow your business with modern web
+            Let&apos;s discuss how I can help grow your business with modern web
             development and AI automation
           </p>
         </motion.div>

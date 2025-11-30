@@ -123,8 +123,8 @@ export default function About() {
               className="mt-8 p-6 rounded-lg bg-gradient-to-br from-blue-500/10 to-purple-600/10 border border-purple-500/20"
             >
               <p className="text-sm text-foreground/70 italic">
-                "Loves performance optimization and creating seamless user
-                experiences"
+                &ldquo;Loves performance optimization and creating seamless user
+                experiences&rdquo;
               </p>
             </motion.div>
           </motion.div>
