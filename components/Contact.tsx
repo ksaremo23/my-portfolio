@@ -4,6 +4,19 @@ import { motion } from "framer-motion";
 import { Send, Calendar, MessageSquare } from "lucide-react";
 import { useState } from "react";
 
+// Extend Window interface for Chatbase
+declare global {
+  interface Window {
+    chatbase?: {
+      open: () => void;
+      close: () => void;
+      isOpen: () => boolean;
+      (method: string, ...args: any[]): any;
+      q?: any[][];
+    };
+  }
+}
+
 export default function Contact() {
   const [formData, setFormData] = useState({
     name: "",
@@ -94,9 +107,37 @@ export default function Contact() {
                 </div>
               </a>
 
-              <a
-                href="#"
-                className="flex items-center gap-3 p-4 rounded-lg bg-card border border-border hover:border-purple-500/50 transition-all duration-300 group"
+              <button
+                onClick={() => {
+                  // Open Chatbase widget if available
+                  if (typeof window !== "undefined" && window.chatbase) {
+                    try {
+                      if (typeof window.chatbase.open === "function") {
+                        window.chatbase.open();
+                      } else if (typeof window.chatbase === "function") {
+                        window.chatbase("open");
+                      }
+                    } catch (error) {
+                      console.error("Error opening Chatbase widget:", error);
+                    }
+                  } else {
+                    // If Chatbase isn't loaded yet, wait a bit and try again
+                    setTimeout(() => {
+                      if (window.chatbase) {
+                        try {
+                          if (typeof window.chatbase.open === "function") {
+                            window.chatbase.open();
+                          } else if (typeof window.chatbase === "function") {
+                            window.chatbase("open");
+                          }
+                        } catch (error) {
+                          console.error("Error opening Chatbase widget:", error);
+                        }
+                      }
+                    }, 500);
+                  }
+                }}
+                className="w-full flex items-center gap-3 p-4 rounded-lg bg-card border border-border hover:border-purple-500/50 transition-all duration-300 group text-left"
               >
                 <div className="p-2 bg-gradient-to-br from-purple-500 to-pink-600 rounded-lg group-hover:scale-110 transition-transform">
                   <MessageSquare className="w-5 h-5 text-white" />
@@ -109,7 +150,7 @@ export default function Contact() {
                     Get instant answers from my AI bot
                   </p>
                 </div>
-              </a>
+              </button>
             </div>
           </motion.div>
 
