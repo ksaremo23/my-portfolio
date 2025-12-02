@@ -2,6 +2,19 @@
 
 import { useEffect } from "react";
 
+// Extend Window interface for Chatbase
+declare global {
+  interface Window {
+    chatbase?: {
+      open: () => void;
+      close: () => void;
+      isOpen: () => boolean;
+      (method: string, ...args: any[]): any;
+      q?: any[][];
+    };
+  }
+}
+
 export default function ChatbaseWidget() {
   useEffect(() => {
     // Ensure we're in the browser
@@ -33,13 +46,23 @@ export default function ChatbaseWidget() {
       div[class*="chatbase"] {
         z-index: 9999 !important;
       }
-      /* Ensure minimize button is visible */
+      /* Ensure minimize button is visible and clickable */
       button[aria-label*="minimize"],
       button[aria-label*="Minimize"],
       button[title*="minimize"],
-      button[title*="Minimize"] {
+      button[title*="Minimize"],
+      button[class*="minimize"],
+      button[class*="close"] {
         z-index: 10000 !important;
         pointer-events: auto !important;
+        cursor: pointer !important;
+      }
+      /* Make sure the chat bubble button works */
+      button[class*="bubble"],
+      div[class*="bubble"] {
+        z-index: 9999 !important;
+        pointer-events: auto !important;
+        cursor: pointer !important;
       }
     `;
     
@@ -47,6 +70,77 @@ export default function ChatbaseWidget() {
     if (!document.getElementById("chatbase-widget-styles")) {
       document.head.appendChild(style);
     }
+
+    // Wait for Chatbase to initialize and add minimize functionality
+    const setupMinimizeHandler = () => {
+      // Check if chatbase is available
+      if (typeof window.chatbase === "undefined") {
+        // Retry after a short delay
+        setTimeout(setupMinimizeHandler, 500);
+        return;
+      }
+
+      // Function to handle minimize button clicks
+      const handleMinimizeClick = (event: MouseEvent) => {
+        const target = event.target as HTMLElement;
+        
+        // Check if clicked element is a minimize/close button
+        const isMinimizeButton = 
+          target.getAttribute("aria-label")?.toLowerCase().includes("minimize") ||
+          target.getAttribute("title")?.toLowerCase().includes("minimize") ||
+          target.getAttribute("aria-label")?.toLowerCase().includes("close") ||
+          target.classList.toString().toLowerCase().includes("minimize") ||
+          target.classList.toString().toLowerCase().includes("close");
+
+        if (isMinimizeButton && window.chatbase) {
+          // Use Chatbase API to close the chat
+          try {
+            if (typeof window.chatbase.close === "function") {
+              window.chatbase.close();
+            } else if (typeof window.chatbase === "function") {
+              window.chatbase("close");
+            }
+          } catch (error) {
+            console.error("Error closing Chatbase widget:", error);
+          }
+        }
+      };
+
+      // Add click event listener to document to catch minimize button clicks
+      document.addEventListener("click", handleMinimizeClick, true);
+
+      // Also try to find and enhance the minimize button directly
+      const findAndEnhanceMinimizeButton = () => {
+        const minimizeButtons = document.querySelectorAll(
+          'button[aria-label*="minimize"], button[aria-label*="Minimize"], button[title*="minimize"], button[title*="Minimize"], button[class*="minimize"], button[class*="close"]'
+        );
+
+        minimizeButtons.forEach((button) => {
+          button.addEventListener("click", (e) => {
+            e.stopPropagation();
+            if (window.chatbase) {
+              try {
+                if (typeof window.chatbase.close === "function") {
+                  window.chatbase.close();
+                } else if (typeof window.chatbase === "function") {
+                  window.chatbase("close");
+                }
+              } catch (error) {
+                console.error("Error closing Chatbase widget:", error);
+              }
+            }
+          });
+        });
+      };
+
+      // Try to find minimize button after widget loads
+      setTimeout(findAndEnhanceMinimizeButton, 1000);
+      setTimeout(findAndEnhanceMinimizeButton, 2000);
+      setTimeout(findAndEnhanceMinimizeButton, 3000);
+    };
+
+    // Start setting up minimize handler
+    setupMinimizeHandler();
 
     // Cleanup function
     return () => {
