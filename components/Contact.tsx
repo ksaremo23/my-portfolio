@@ -76,7 +76,9 @@ export default function Contact() {
 
             <div className="space-y-4">
               <a
-                href="#"
+                href="https://calendly.com/ksaremo1/intro-call-portfolio"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="flex items-center gap-3 p-4 rounded-lg bg-card border border-border hover:border-purple-500/50 transition-all duration-300 group"
               >
                 <div className="p-2 bg-gradient-to-br from-blue-500 to-purple-600 rounded-lg group-hover:scale-110 transition-transform">
