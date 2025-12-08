@@ -11,8 +11,8 @@ const projects = [
       "Modern AI agency website showcasing services and capabilities with interactive elements.",
     tech: ["Next.js", "React", "TypeScript", "Tailwind CSS"],
     image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800",
-    liveUrl: "#",
-    codeUrl: "#",
+    liveUrl: "https://codenova-six.vercel.app/",
+    codeUrl: "https://github.com/ksaremo23/codenova",
   },
   {
     title: "Resume Builder",
