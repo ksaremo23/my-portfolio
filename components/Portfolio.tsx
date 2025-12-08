@@ -15,13 +15,13 @@ const projects = [
     codeUrl: "#",
   },
   {
-    title: "Cash Register App",
+    title: "Resume Builder",
     description:
-      "Interactive cash register application built with vanilla JavaScript for retail management.",
-    tech: ["JavaScript", "HTML", "CSS"],
-    image: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=800",
-    liveUrl: "#",
-    codeUrl: "#",
+      "Modern web application for creating professional resumes with real-time preview and export functionality.",
+    tech: ["Next.js", "React", "TypeScript", "Tailwind CSS"],
+    image: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=800&auto=format&fit=crop",
+    liveUrl: "https://resume-builder-psi-sandy.vercel.app/",
+    codeUrl: "https://github.com/ksaremo23/resume-builder",
   },
   {
     title: "Appointment Setter AI Bot",
@@ -46,7 +46,7 @@ const projects = [
     description:
       "Web application that generates high-quality content using AI for blogs and social media.",
     tech: ["React", "OpenAI API", "Vercel AI SDK", "Tailwind CSS"],
-    image: "https://images.unsplash.com/photo-1676299080923-6c23c8b4c039?w=800",
+    image: "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=800&auto=format&fit=crop",
     liveUrl: "#",
     codeUrl: "#",
   },
@@ -98,6 +98,11 @@ export default function Portfolio() {
                   sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                   className="object-cover group-hover:scale-110 transition-transform duration-300"
                   unoptimized
+                  onError={(e) => {
+                    // Fallback to a placeholder if image fails to load
+                    const target = e.target as HTMLImageElement;
+                    target.src = `https://via.placeholder.com/800x400/1a1a2e/ffffff?text=${encodeURIComponent(project.title)}`;
+                  }}
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
               </div>
