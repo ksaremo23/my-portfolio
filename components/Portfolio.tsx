@@ -24,6 +24,15 @@ const projects = [
     codeUrl: "https://github.com/ksaremo23/resume-builder",
   },
   {
+    title: "AI Email Writer",
+    description:
+      "Generate polished business emails in seconds using AI. Built with React and Groq for fast, professional email generation.",
+    tech: ["React", "Groq AI", "Vite", "CSS3"],
+    image: "https://images.unsplash.com/photo-1499750310107-5fef28a66643?w=800&auto=format&fit=crop",
+    liveUrl: "https://ai-email-writer-beta.vercel.app/",
+    codeUrl: "https://github.com/ksaremo23/ai-email-writer",
+  },
+  {
     title: "Appointment Setter AI Bot",
     description:
       "Intelligent AI bot that automates appointment scheduling and customer interactions.",
@@ -47,15 +56,6 @@ const projects = [
       "Web application that generates high-quality content using AI for blogs and social media.",
     tech: ["React", "OpenAI API", "Vercel AI SDK", "Tailwind CSS"],
     image: "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=800&auto=format&fit=crop",
-    liveUrl: "#",
-    codeUrl: "#",
-  },
-  {
-    title: "Property Listing Website",
-    description:
-      "Airbnb-style property listing platform with search, filters, and booking features.",
-    tech: ["Next.js", "React", "TypeScript", "API Integration"],
-    image: "https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=800",
     liveUrl: "#",
     codeUrl: "#",
   },
