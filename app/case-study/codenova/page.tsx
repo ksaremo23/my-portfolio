@@ -106,7 +106,7 @@ export default function CodeNovaCaseStudy() {
               📌 Overview
             </h2>
             <p className="text-foreground/80 leading-relaxed">
-              CodeNova AI is a clean, modern portfolio site showcasing an AI agency's services and offerings. It acts as a business presentation platform highlighting core services like AI automation, chatbot solutions, CRM tools, and development support.
+              CodeNova AI is a clean, modern portfolio site showcasing an AI agency&apos;s services and offerings. It acts as a business presentation platform highlighting core services like AI automation, chatbot solutions, CRM tools, and development support.
             </p>
           </motion.section>
 

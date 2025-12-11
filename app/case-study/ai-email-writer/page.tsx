@@ -151,7 +151,7 @@ export default function AIEmailWriterCaseStudy() {
               </li>
               <li className="flex items-start gap-2">
                 <span className="text-purple-400 mt-1">•</span>
-                <span>Click "Generate Email" to receive AI-created copy</span>
+                <span>Click &quot;Generate Email&quot; to receive AI-created copy</span>
               </li>
             </ul>
             <p className="text-foreground/80 leading-relaxed mt-4">

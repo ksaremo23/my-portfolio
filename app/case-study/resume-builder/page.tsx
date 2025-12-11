@@ -106,7 +106,7 @@ export default function ResumeBuilderCaseStudy() {
               📌 Overview
             </h2>
             <p className="text-foreground/80 leading-relaxed">
-              The Resume Builder is a web app that lets users create professional resumes quickly and efficiently. It's designed to simplify the resume creation process, guiding users through inputs and generating formatted output that's easy to download and share.
+              The Resume Builder is a web app that lets users create professional resumes quickly and efficiently. It&apos;s designed to simplify the resume creation process, guiding users through inputs and generating formatted output that&apos;s easy to download and share.
             </p>
           </motion.section>
 
