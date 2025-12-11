@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import { ExternalLink, Github } from "lucide-react";
 import Image from "next/image";
+import Link from "next/link";
 
 const projects = [
   {
@@ -13,6 +14,7 @@ const projects = [
     image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800",
     liveUrl: "https://codenova-six.vercel.app/",
     codeUrl: "https://github.com/ksaremo23/codenova",
+    caseStudyUrl: "/case-study/codenova",
   },
   {
     title: "Resume Builder",
@@ -22,6 +24,7 @@ const projects = [
     image: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=800&auto=format&fit=crop",
     liveUrl: "https://resume-builder-psi-sandy.vercel.app/",
     codeUrl: "https://github.com/ksaremo23/resume-builder",
+    caseStudyUrl: "/case-study/resume-builder",
   },
   {
     title: "AI Email Writer",
@@ -31,6 +34,7 @@ const projects = [
     image: "https://images.unsplash.com/photo-1499750310107-5fef28a66643?w=800&auto=format&fit=crop",
     liveUrl: "https://ai-email-writer-beta.vercel.app/",
     codeUrl: "https://github.com/ksaremo23/ai-email-writer",
+    caseStudyUrl: "/case-study/ai-email-writer",
   },
   {
     title: "Appointment Setter AI Bot",
@@ -107,9 +111,17 @@ export default function Portfolio() {
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
               </div>
               <div className="p-6">
-                <h3 className="text-xl font-semibold mb-2 text-foreground">
-                  {project.title}
-                </h3>
+                {project.caseStudyUrl ? (
+                  <Link href={project.caseStudyUrl}>
+                    <h3 className="text-xl font-semibold mb-2 text-foreground hover:text-purple-400 transition-colors cursor-pointer">
+                      {project.title}
+                    </h3>
+                  </Link>
+                ) : (
+                  <h3 className="text-xl font-semibold mb-2 text-foreground">
+                    {project.title}
+                  </h3>
+                )}
                 <p className="text-sm text-foreground/70 mb-4">
                   {project.description}
                 </p>
