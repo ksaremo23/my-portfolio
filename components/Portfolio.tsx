@@ -55,13 +55,13 @@ const projects = [
     codeUrl: "#",
   },
   {
-    title: "AI Content Generator Web App",
+    title: "Dental Business Website",
     description:
-      "Web application that generates high-quality content using AI for blogs and social media.",
-    tech: ["React", "OpenAI API", "Vercel AI SDK", "Tailwind CSS"],
-    image: "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=800&auto=format&fit=crop",
-    liveUrl: "#",
-    codeUrl: "#",
+      "Modern, responsive 6-page dental business website with appointment booking, team profiles, and interactive features.",
+    tech: ["HTML5", "CSS3", "JavaScript", "Font Awesome"],
+    image: "https://images.unsplash.com/photo-1606811971618-4486d14f3f99?w=800&auto=format&fit=crop",
+    liveUrl: "https://dental-website-template-jet.vercel.app/",
+    codeUrl: "https://github.com/ksaremo23/dental-website-template",
   },
 ];
 
