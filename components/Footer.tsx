@@ -12,9 +12,9 @@ const navLinks = [
 ];
 
 const socialLinks = [
-  { name: "GitHub", icon: Github, href: "#" },
-  { name: "LinkedIn", icon: Linkedin, href: "#" },
-  { name: "Facebook", icon: Facebook, href: "#" },
+  { name: "GitHub", icon: Github, href: "https://github.com/ksaremo23" },
+  { name: "LinkedIn", icon: Linkedin, href: "https://www.linkedin.com/in/leicsha-karen-saremo-4883b41aa/" },
+  { name: "Facebook", icon: Facebook, href: "https://www.facebook.com/leicshakaren.saremo.1/" },
 ];
 
 export default function Footer() {
