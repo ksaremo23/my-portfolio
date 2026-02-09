@@ -46,13 +46,13 @@ const projects = [
     codeUrl: "#",
   },
   {
-    title: "Next.js Landing Page",
+    title: "Blog App",
     description:
-      "High-performance landing page for local business with SEO optimization.",
-    tech: ["Next.js", "TypeScript", "Tailwind CSS"],
-    image: "https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?w=800",
-    liveUrl: "#",
-    codeUrl: "#",
+      "Full-featured blog application with authentication, CRUD operations, comments with images, and pagination. Built with React 19 and Supabase.",
+    tech: ["React 19", "TypeScript", "Redux Toolkit", "Supabase"],
+    image: "https://images.unsplash.com/photo-1499750310107-5fef28a66643?w=800&auto=format&fit=crop",
+    liveUrl: "https://blog-app-1-three.vercel.app/",
+    codeUrl: "https://github.com/ksaremo23/blog-app.1",
   },
   {
     title: "Dental Business Website",
