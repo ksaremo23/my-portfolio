@@ -5,22 +5,22 @@ import { Quote } from "lucide-react";
 
 const testimonials = [
   {
-    name: "Client Name",
+    name: "Milany Bagacina",
     role: "Business Owner",
     content:
       "Leicsha delivered an exceptional website that perfectly captured our brand. The AI automation she set up has saved us hours every week!",
     rating: 5,
   },
   {
-    name: "Colleague Name",
+    name: "Veronica Padua",
     role: "Former Team Member",
     content:
       "Working with Leicsha was a pleasure. Her attention to detail and problem-solving skills are outstanding. Highly recommend!",
     rating: 5,
   },
   {
-    name: "Mentor Name",
-    role: "Bootcamp Instructor",
+    name: "Radh Radidayah",
+    role: "GoIt Bootcamp Instructor",
     content:
       "Leicsha shows great dedication to learning and implementing new technologies. Her portfolio demonstrates strong technical skills.",
     rating: 5,
