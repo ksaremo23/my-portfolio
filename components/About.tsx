@@ -7,7 +7,7 @@ export default function About() {
   const highlights = [
     {
       icon: Code,
-      title: "2 Years at Accenture",
+      title: "4 Years at Accenture",
       description: "Software Engineer & Salesforce Admin experience",
     },
     {
